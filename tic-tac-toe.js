@@ -27,6 +27,11 @@ window.onload = function () {
             board.children.item(index).classList.remove("hover");
         }
     }
+    ngame = document.querySelector("button");
+    ngame.onclick = function(element) {
+        console.log("button clicked");
+        window.location.reload();
+    }
 }
 function check() {
     if (info[0] == info[1] && info[0] == info[2] && info[0] != undefined) {
