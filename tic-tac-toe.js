@@ -9,13 +9,17 @@ window.onload = function () {
         board.children.item(index).classList.add("square");
         board.children.item(index).addEventListener("click", function() {
             if ((turns %2) == 0) {
-                board.children.item(index).innerHTML = "X";
-                board.children.item(index).classList.add("X");
-                info[index] = "X";
+                if (board.children.item(index).innerHTML == "") {
+                    board.children.item(index).innerHTML = "X";
+                    board.children.item(index).classList.add("X");  
+                    info[index] = "X";
+                }
             } else {
-                board.children.item(index).innerHTML = "O";
-                board.children.item(index).classList.add("O");
-                info[index] = "O";
+                if (board.children.item(index).innerHTML == "") {
+                    board.children.item(index).innerHTML = "O";
+                    board.children.item(index).classList.add("O");
+                    info[index] = "O";
+                }
             }
             check();
             turns++;
